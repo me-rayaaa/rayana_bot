@@ -3,7 +3,7 @@ import requests
 import random
 from telebot import types
 
-bot = telebot.TeleBot("тттт")
+bot = telebot.TeleBot("YOUR API")
 
 
 @bot.message_handler(commands=['help'])
@@ -73,7 +73,7 @@ EUR {eur_rate} руб. 💶
 def weather(message):
     try:
         city = message.text.split(' ', 1)[1]  # Получаем город из сообщения пользователя
-        api_key = "3f9cc2afa48f311d34d0780ab04f8d12"
+        api_key = "YOUR API"
         url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
         resp = requests.get(url)
         data = resp.json()
